@@ -19,7 +19,10 @@
     "rugalib/ruga-std": "^1.0",
     "rugalib/ruga-db": "^1.0",
     "rugalib/ruga-asset": "^1.0",
-    "datatables.net/datatables.net": "dev-master"
+    "rugalib/asset-jquery": "^3.6",
+    "rugalib/asset-bootstrap": "^5.1",
+    "rugalib/asset-jquery-datatables": "^1.12",
+    "rugalib/ruga-asset-datatables-searchhighlight": "^1.0"
   },
   "repositories": [
     {

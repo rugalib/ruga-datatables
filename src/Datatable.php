@@ -191,27 +191,23 @@ class Datatable implements ConfigurationInterface
         
         $bugicon = file_get_contents(__DIR__ . '/../public/bug-outline.svg');
         $debug = <<<HTML
-<button type="button" class="btn btn-xs btn-default" style="padding: 5px; border: 2px; width: 2.2em" disabled="disabled" data-toggle="modal" data-target="#{$this->getId(
+<button type="button" class="btn btn-xs btn-default" style="padding: 5px; border: 2px; width: 2.2em" disabled="disabled" data-bs-toggle="modal" data-bs-target="#{$this->getId(
             'debug-modal'
         )}">
 {$bugicon}
 </button>
-<div class="modal fade" id="{$this->getId('debug-modal')}" tabindex="-1" aria-labelledby="{$this->getId(
-            'debug-modal-label'
-        )}" aria-hidden="true">
+<div class="modal fade" id="{$this->getId('debug-modal')}" tabindex="-1" aria-labelledby="{$this->getId('debug-modal-label')}" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="{$this->getId('debug-modal-label')}">Debug information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="pre-scrollable text-small" id="{$this->getId('debug')}"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -324,8 +320,8 @@ HTML;
         var table_{$this->getId()}=$("#{$this->getId()}")
             .on('preXhr.dt', function (e, settings, data) {
                 // Disable debug button
-                $('button[data-target="#{$this->getId('debug-modal')}"]').removeClass(['text-danger', 'text-success']);
-                $('button[data-target="#{$this->getId('debug-modal')}"]').prop('disabled', true);
+                $('button[data-bs-target="#{$this->getId('debug-modal')}"]').removeClass(['text-danger', 'text-success']);
+                $('button[data-bs-target="#{$this->getId('debug-modal')}"]').prop('disabled', true);
                 
                 data.customSqlData=customSqlData;
 
@@ -373,12 +369,12 @@ HTML;
                     (data.query ? ('<pre class="small text-wrap"><code>' + data.query + '</code></pre>') : '')
                     );
                 // Enable debug button
-                $('button[data-target="#{$this->getId('debug-modal')}"]').prop('disabled', false);
+                $('button[data-bs-target="#{$this->getId('debug-modal')}"]').prop('disabled', false);
                 
                 if(data.error) {
-                    $('button[data-target="#{$this->getId('debug-modal')}"]').addClass('text-danger');
+                    $('button[data-bs-target="#{$this->getId('debug-modal')}"]').addClass('text-danger');
                 } else if(data.query) {
-                    $('button[data-target="#{$this->getId('debug-modal')}"]').addClass('text-success');
+                    $('button[data-bs-target="#{$this->getId('debug-modal')}"]').addClass('text-success');
                 }
                 
                 if( filterFormSelector !== '' ) {
@@ -403,7 +399,7 @@ HTML;
                     })
                 },
                 beforeSend: function(request) {
-                    request.setRequestHeader('X-Rugalib-Component', 'rugalib-datatables');
+                    request.setRequestHeader('X-Ruga-Component', 'ruga-datatables');
                 }
             },
 			rowId: '{$this->getConfig('rowId')}',

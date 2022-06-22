@@ -79,8 +79,11 @@
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-escaper" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-view" />
       <path value="$PROJECT_DIR$/vendor/rugalib/ruga-asset" />
-      <path value="$PROJECT_DIR$/vendor/datatables.net/datatables.net" />
-      <path value="$PROJECT_DIR$/vendor/components/jquery" />
+      <path value="$PROJECT_DIR$/vendor/rugalib/asset-jquery" />
+      <path value="$PROJECT_DIR$/vendor/rugalib/asset-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/rugalib/asset-jquery-datatables" />
+      <path value="$PROJECT_DIR$/vendor/rugalib/ruga-asset-jquery-highlight" />
+      <path value="$PROJECT_DIR$/vendor/rugalib/ruga-asset-datatables-searchhighlight" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />
